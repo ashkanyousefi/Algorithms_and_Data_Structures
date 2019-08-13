@@ -43,3 +43,54 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+
+
+Area=[]
+Mobile=[]
+
+for row in calls:
+    if row[0][0:5]=='(080)' and row[1][0]=='(':
+        Place_Holder=(row[1].split(')'))[0]
+        if Place_Holder[1:] not in Area:
+            Area.append(Place_Holder[1:])
+            
+    if row[0][0:5]=='(080)' and row[1][0]=='7':
+        Place_Holder=(row[1].split(' '))[0]
+        if Place_Holder not in Mobile:
+            Mobile.append(Place_Holder[0:4])
+            
+            
+    if row[0][0:5]=='(080)' and row[1][0]=='8':
+        Place_Holder=(row[1].split(' '))[0]
+        if Place_Holder not in Mobile:
+            Mobile.append(Place_Holder[0:4])
+            
+            
+    if row[0][0:5]=='(080)' and row[1][0]=='9':
+        Place_Holder=(row[1].split(' '))[0]
+        if Place_Holder not in Mobile:
+            Mobile.append(Place_Holder[0:4])
+
+print(len(Area))
+print(len(Mobile))
+
+#Step 2
+
+Banglore_received_calls=[]
+Total_calls=[]
+
+for row in calls:
+    if row[0][0:5]=='(080)' and row[1][0:5]=='(080)':
+        Place_Holder=row[1]
+        Banglore_received_calls.append(Place_Holder)
+        
+    if row[0][0:5]=='(080)':
+        Total_calls.append(row[1])
+
+    
+L_Banglore_received_calls=len(Banglore_received_calls)
+L_Total_calls=len(Total_calls)
+Percentage=(L_Banglore_received_calls/L_Total_calls)*100
+print('The total percentage of the Banglore calls {0:3.3f}%'.format(Percentage))
+
