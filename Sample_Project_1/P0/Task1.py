@@ -18,3 +18,6 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
+
+Total=(len(calls)+len(texts))*2
+print('There are{0:6d} different telephone numbers in the records'.format(Total))

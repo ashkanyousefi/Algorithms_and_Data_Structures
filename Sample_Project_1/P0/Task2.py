@@ -19,4 +19,21 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
+Call_Duration=[row[3] for row in calls]
+Max_Duration=max(Call_Duration)
+
+for row in calls:
+    if row[3]==Max_Duration:
+        print('The longest time spent belongs to: \n phone number: {0} \n phone_number: {1}'.format(row[0],row[1]))
+
+
+
+
+
+
+
+
+
+
+
 
