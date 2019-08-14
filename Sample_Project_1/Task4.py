@@ -24,4 +24,28 @@ Print a message:
 <list of numbers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
+Possible_Telemarketers=[]
+Received_calls=[]
+Received_Texts=[]
+Telemarketers=[]
+
+for row in calls:
+    Received_calls.append(row[1])
+    if row[0][0:3]=='140':
+        Possible_Telemarketers.append(row[0])
+
+# for each in Possible_Telemarketers:
+for row in texts:
+    if row[1][0:3]=='140':
+        Received_Texts.append(row[1])
+
+for each in Possible_Telemarketers:
+    if each not in (Received_calls or Received_Texts):
+        if each not in Telemarketers:
+            Telemarketers.append(each)
+            
+print("These numbers could be telemarketers:\n")  
+Telemarketers.sort()
+for each in Telemarketers:
+    print("\n {0}".format(each))
 
