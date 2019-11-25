@@ -1,25 +1,26 @@
 # The following function will give the division and the remainder 
 
+#%%
 def divide_func(m,n):
-    Remainder=m%n
-    Factor= (m-Remainder)/n
-    return Remainder,Factor
+    remainder=m%n
+    factor= m//n
+    return remainder,factor
+
+#%%
 
 def coin_count(number_main):
     Remainder_10,Factor_10=divide_func(number_main,10)
     Remainder_5,Factor_5=divide_func(Remainder_10,5)
-    return Factor_10,Factor_5,Remainder_5
+    Remainder_1,Factor_1=divide_func(Remainder_5,1)
 
+    return (Factor_10+Factor_5+Factor_1)
+
+
+#%%
 # The main body of the program
 
-number_main=Input_Digit=input("Enter the number: ")
-coin_10,coin_5,coin_1=coin_count(number_main)
-
-print("Number of coin 10 %d \n number of coin 5 %d \n number of coin 1 %d"%(coin_10,coin_5,coin_1))
+Input_Digit=int(input("Enter the number: "))
+print(coin_count(Input_Digit))
 
 
-
-
-
-
-
+# %%

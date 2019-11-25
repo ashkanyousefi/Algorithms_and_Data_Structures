@@ -1,3 +1,6 @@
+
+print('test')
+
 # Uses python3
 import sys
 
@@ -8,8 +11,17 @@ def lcm_naive(a, b):
 
     return a*b
 
+from gcd import *
+
+def lcm(a, b):
+    gcd_result = gcd_fast(a,b)
+    total=a*b
+    final_result=total/gcd_result
+    print(final_result)
+    return final_result
+
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    a, b = map(int, input.split())
-    print(lcm_naive(a, b))
+    ab = input()
+    a, b = map(int, ab.split())
+    print(lcm(a, b))
 

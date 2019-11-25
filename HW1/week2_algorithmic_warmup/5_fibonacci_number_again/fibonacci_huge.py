@@ -17,3 +17,20 @@ if __name__ == '__main__':
     input = sys.stdin.read();
     n, m = map(int, input.split())
     print(get_fibonacci_huge_naive(n, m))
+
+    #The above method is not effective for the large numbers and as a result the periodic method need to be implemented.
+
+
+def get_fibonacci_huge_naive(n):
+    if n<=1:
+        return n
+
+    return (get_fibonacci_huge_naive(n-1) + get_fibonacci_huge_naive(n-2))%10 
+
+    
+    
+
+
+
+
+

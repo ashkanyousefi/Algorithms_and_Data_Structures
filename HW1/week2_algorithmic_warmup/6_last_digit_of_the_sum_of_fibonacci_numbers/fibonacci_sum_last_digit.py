@@ -19,3 +19,6 @@ if __name__ == '__main__':
     input = sys.stdin.read()
     n = int(input)
     print(fibonacci_sum_naive(n))
+
+# The above method is slow and it is not going to work efficiently for large numbers
+

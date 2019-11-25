@@ -1,4 +1,10 @@
 # Uses python3
+
+#%%
+
+
+
+
 def evalt(a, b, op):
     if op == '+':
         return a + b

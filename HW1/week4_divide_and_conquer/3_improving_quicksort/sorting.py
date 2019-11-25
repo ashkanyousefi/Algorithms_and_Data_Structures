@@ -1,12 +1,16 @@
+#%%
+
 # Uses python3
 import sys
 import random
+
+#%%
 
 def partition3(a, l, r):
     #write your code here
     pass
 
-def partition2(a, l, r):
+def partition2(a, l, r): 
     x = a[l]
     j = l
     for i in range(l + 1, r + 1):
@@ -15,7 +19,6 @@ def partition2(a, l, r):
             a[i], a[j] = a[j], a[i]
     a[l], a[j] = a[j], a[l]
     return j
-
 
 def randomized_quick_sort(a, l, r):
     if l >= r:

@@ -15,6 +15,21 @@ def fibonacci_sum_squares_naive(n):
 
     return sum % 10
 
+def last_digit(n):
+    if n <= 1:
+        return 1
+    return (last_digit(n-1) + last_digit(n-2)) % 10, 
+
+def squared_sum_fib_last_digit(n):
+    return (last_digit(n) * last_digit(n+1)) % 10
+
+
 if __name__ == '__main__':
-    n = int(stdin.read())
-    print(fibonacci_sum_squares_naive(n))
+    n = input()
+    n = int(n)
+    print(squared_sum_fib_last_digit(n))
+
+
+# The above method is slow and the square method as shown need to be implemented.
+
+
