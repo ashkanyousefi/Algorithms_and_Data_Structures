@@ -28,7 +28,6 @@
 # threading.stack_size(2**27)   # new thread will get stack of such size
 # threading.Thread(target=main).start()
 
-
 number_size=5
 child_arrangement=['-1','0','4','0','3']
 parent_assignment=[]

@@ -73,17 +73,58 @@ def balance_check(my_list):
     from collections import deque
     my_stack=deque()
     for i,element in enumerate(my_list):
-        if element in [')',']','}']:
-            if element==my_stack[0]:
+        print(i)
+        print(element)
+        print(my_stack)
+        # input()
+        
+        if element == ')' and my_stack[-1]=='(':
                 my_stack.pop()
-            else:
-                print(i)
-                return i
+        elif element == ')' and my_stack[-1]!='(':
+            print('There is a problem in {} location'.format(i))
+            return
+        elif element == ']' and my_stack[-1]=='[':
+                my_stack.pop()
+        elif element == ']' and my_stack[-1]!='[':
+            print('There is a problem in {} location'.format(i))
+            return
+        elif element == '}' and my_stack[-1]=='{':
+                my_stack.pop()
+        elif element == '}' and my_stack[-1]!='{':
+            print('There is a problem in {} location'.format(i))
+            return
         else:
             my_stack.append(element)
-    print("success")
-    return -1
+
+    if my_stack.empty():
+        print('Success')
+
+
+def the_second_blance_check(my_list):
+    from collections import deque
+    my_stack=deque()
+    for i,element in enumerate(my_list):
+        print(i)
+        print(element)
+        print(my_stack)
+        # input()
+        
+        if element in ['(', '[', '{']:
+            my_stack.append(element)
+        elif element == ')' and my_stack[-1]=='(':
+                my_stack.pop()
+        elif element == ']' and my_stack[-1]=='[':
+                my_stack.pop()
+        elif element == '}' and my_stack[-1]=='{':
+                my_stack.pop()
+        else:
+            print('There is a problem in {} location'.format(i))
+            return i
+
+    if my_stack.empty():
+        print('Success')
 
 # print(balance_pranthesis('[([()][]]'))
-balance_check('[([()][]]')
+# balance_check('[([()][]]))))')
+the_second_blance_check('[([()][]]))))')
 
